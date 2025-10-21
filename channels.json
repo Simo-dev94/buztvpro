@@ -10,7 +10,7 @@
           "id": "bein1",
           "name": "Bein Sports 1 HD",
           "logo": "https://example.com/channels/bein1.png",
-          "stream": "https://cdn.example.com/bein1/playlist.m3u8"
+          "stream": "https://ketsdt.lls.pbs.org/out/v1/03c094dbd7874a4a8c3fe9fb10081bdb/index.m3u8"
         }
       ]
     },
