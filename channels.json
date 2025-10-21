@@ -1,0 +1,31 @@
+{
+  "provider": "MyTV",
+  "packages": [
+    {
+      "id": "pkg_bein",
+      "name": "Bein Sports",
+      "logo": "https://example.com/logos/bein.png",
+      "channels": [
+        {
+          "id": "bein1",
+          "name": "Bein Sports 1 HD",
+          "logo": "https://example.com/channels/bein1.png",
+          "stream": "https://cdn.example.com/bein1/playlist.m3u8"
+        }
+      ]
+    },
+    {
+      "id": "pkg_morocco",
+      "name": "قنوات مغربية",
+      "logo": "https://example.com/logos/morocco.png",
+      "channels": [
+        {
+          "id": "alaoula",
+          "name": "Al Aoula",
+          "logo": "https://example.com/channels/alaoula.png",
+          "stream": "https://cdn.example.com/alaoula/playlist.m3u8"
+        }
+      ]
+    }
+  ]
+}
