@@ -1,4 +1,4 @@
- {
+{
   "provider": "Buz TV Pro",
   "packages": [
     {
@@ -8,21 +8,63 @@
       "channels": [
         {
           "id": "bein1",
-          "name": "Bein Sports 1 HD",
-          "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Thamaniyah_logo.png",
+          "name": "BeIN SPORTS 1 HD",
+          "logo": "https://i.imgur.com/Vtk2cGI.png",
           "stream": "https://d2qh3gh0k5vp3v.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-n6pess5lwbghr/2M_ES.m3u8"
         },
         {
           "id": "bein2",
-          "name": "Bein Sports 2 HD",
-          "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Thamaniyah_logo.png",
+          "name": "BeIN SPORTS 2 HD",
+          "logo": "https://i.imgur.com/vUJZSvs.png",
           "stream": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4"
         },
         {
           "id": "bein3",
-          "name": "Bein Sports 3 HD",
-          "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Thamaniyah_logo.png",
+          "name": "BeIN SPORTS 3 HD",
+          "logo": "https://i.imgur.com/UYSMao3.png",
           "stream": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_5mb.mp4"
+        },
+        {
+          "id": "bein4",
+          "name": "BeIN SPORTS MAX 4",
+          "logo": "https://i.imgur.com/j7osMfM.png",
+          "stream": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4"
+        },
+        {
+          "id": "bein5",
+          "name": "BeIN SPORTS MAX 5",
+          "logo": "https://i.imgur.com/L6TvXAi.png",
+          "stream": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4"
+        },
+        {
+          "id": "bein6",
+          "name": "BeIN SPORTS MAX 6",
+          "logo": "https://i.imgur.com/GHZHRPF.png",
+          "stream": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_3mb.mp4"
+        },
+        {
+          "id": "bein7",
+          "name": "BeIN SPORTS MAX 7",
+          "logo": "https://i.imgur.com/sMH0tFc.png",
+          "stream": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_4mb.mp4"
+        },
+        {
+          "id": "bein8",
+          "name": "BeIN SPORTS MAX 8",
+          "logo": "https://i.imgur.com/VTzzoQP.png",
+          "stream": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_5mb.mp4"
+        },
+        {
+          "id": "bein9",
+          "name": "BeIN SPORTS MAX 9",
+          "logo": "https://i.imgur.com/dMTBut1.png",
+          "stream": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_6mb.mp4"
+        },
+        {
+          "id": "bein10",
+          "name": "BeIN SPORTS MAX 10",
+          "logo": "https://i.imgur.com/lVB4Ao9.png",
+          "stream": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_7mb.mp4"
         }
       ]
     },
