@@ -6,110 +6,69 @@
       "name": "Bein Sports",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Thamaniyah_logo.png",
       "channels": [
-        {
-          "id": "bein1",
-          "name": "BeIN SPORTS 1 HD",
-          "logo": "https://i.imgur.com/Vtk2cGI.png",
-          "stream": "https://d2qh3gh0k5vp3v.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-n6pess5lwbghr/2M_ES.m3u8"
-        },
-        {
-          "id": "bein2",
-          "name": "BeIN SPORTS 2 HD",
-          "logo": "https://i.imgur.com/vUJZSvs.png",
-          "stream": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4"
-        },
-        {
-          "id": "bein3",
-          "name": "BeIN SPORTS 3 HD",
-          "logo": "https://i.imgur.com/UYSMao3.png",
-          "stream": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_5mb.mp4"
-        },
-        {
-          "id": "bein4",
-          "name": "BeIN SPORTS MAX 4",
-          "logo": "https://i.imgur.com/j7osMfM.png",
-          "stream": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4"
-        },
-        {
-          "id": "bein5",
-          "name": "BeIN SPORTS MAX 5",
-          "logo": "https://i.imgur.com/L6TvXAi.png",
-          "stream": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4"
-        },
-        {
-          "id": "bein6",
-          "name": "BeIN SPORTS MAX 6",
-          "logo": "https://i.imgur.com/GHZHRPF.png",
-          "stream": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_3mb.mp4"
-        },
-        {
-          "id": "bein7",
-          "name": "BeIN SPORTS MAX 7",
-          "logo": "https://i.imgur.com/sMH0tFc.png",
-          "stream": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_4mb.mp4"
-        },
-        {
-          "id": "bein8",
-          "name": "BeIN SPORTS MAX 8",
-          "logo": "https://i.imgur.com/VTzzoQP.png",
-          "stream": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_5mb.mp4"
-        },
-        {
-          "id": "bein9",
-          "name": "BeIN SPORTS MAX 9",
-          "logo": "https://i.imgur.com/dMTBut1.png",
-          "stream": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_6mb.mp4"
-        },
-        {
-          "id": "bein10",
-          "name": "BeIN SPORTS MAX 10",
-          "logo": "https://i.imgur.com/lVB4Ao9.png",
-          "stream": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_7mb.mp4"
-        }
-      ]
-    },
-    {
-      "id": "pkg_morocco",
-      "name": "قنوات مغربية",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Thamaniyah_logo.png",
-      "channels": [
-        {
-          "id": "alaoula",
-          "name": "Al Aoula",
-          "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Thamaniyah_logo.png",
-          "stream": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4"
-        },
-        {
-          "id": "2m",
-          "name": "2M",
-          "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Thamaniyah_logo.png",
-          "stream": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4"
-        }
-      ]
-    },
-    {
-      "id": "pkg_saudi",
-      "name": "قنوات سعودية",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Thamaniyah_logo.png",
-      "channels": [
-        {
-          "id": "mbc1",
-          "name": "MBC 1",
-          "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Thamaniyah_logo.png",
-          "stream": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4"
-        },
-        {
-          "id": "mbc2",
-          "name": "MBC 2",
-          "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Thamaniyah_logo.png",
-          "stream": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4"
-        },
-        {
-          "id": "rotana",
-          "name": "Rotana",
-          "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Thamaniyah_logo.png",
-          "stream": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_5mb.mp4"
-        }
+        { "id": "bein_news_hd_s1", "name": "beIN News HD (S1)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-news-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67374.m3u8" },
+        { "id": "bein_hd_s1", "name": "beIN HD (S1)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67373.m3u8" },
+        { "id": "bein_sports_1_hd_s1", "name": "beIN SPORTS 1 HD (S1)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-1-qa-fr.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67742.m3u8" },
+        { "id": "bein_sports_1_hd_s2", "name": "beIN SPORTS 1 HD (S2)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-1-qa-fr.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/196179.m3u8" },
+        { "id": "bein_sports_2_hd_s1", "name": "beIN SPORTS 2 HD (S1)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-2-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67743.m3u8" },
+        { "id": "bein_sports_2_hd_s2", "name": "beIN SPORTS 2 HD (S2)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-2-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/196180.m3u8" },
+        { "id": "bein_sports_3_hd_s1", "name": "beIN SPORTS 3 HD (S1)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-3-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67744.m3u8" },
+        { "id": "bein_sports_3_hd_s2", "name": "beIN SPORTS 3 HD (S2)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-3-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/196181.m3u8" },
+        { "id": "bein_sports_4_hd_s1", "name": "beIN SPORTS 4 HD (S1)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-4-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67745.m3u8" },
+        { "id": "bein_sports_4_hd_s2", "name": "beIN SPORTS 4 HD (S2)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-4-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/196182.m3u8" },
+        { "id": "bein_sports_5_hd_s1", "name": "beIN SPORTS 5 HD (S1)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-5-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67746.m3u8" },
+        { "id": "bein_sports_5_hd_s2", "name": "beIN SPORTS 5 HD (S2)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-5-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/196183.m3u8" },
+        { "id": "bein_sports_6_hd_s1", "name": "beIN SPORTS 6 HD (S1)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-6-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67747.m3u8" },
+        { "id": "bein_sports_6_hd_s2", "name": "beIN SPORTS 6 HD (S2)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-6-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/196184.m3u8" },
+        { "id": "bein_sports_7_hd_s1", "name": "beIN SPORTS 7 HD (S1)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-7-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67748.m3u8" },
+        { "id": "bein_sports_7_hd_s2", "name": "beIN SPORTS 7 HD (S2)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-7-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/196185.m3u8" },
+        { "id": "bein_sports_8_hd_s1", "name": "beIN SPORTS 8 HD (S1)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-8-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67749.m3u8" },
+        { "id": "bein_sports_8_hd_s2", "name": "beIN SPORTS 8 HD (S2)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-8-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/196186.m3u8" },
+        { "id": "bein_sports_9_hd_s1", "name": "beIN SPORTS 9 HD (S1)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-9-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67750.m3u8" },
+        { "id": "bein_sports_9_hd_s2", "name": "beIN SPORTS 9 HD (S2)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-9-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/196187.m3u8" },
+        { "id": "bein_nba_hd_s1", "name": "beIN NBA HD (S1)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-nba-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67391.m3u8" },
+        { "id": "bein_fr1_hd_s1", "name": "beIN FR1 HD (S1)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-french-1-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67388.m3u8" },
+        { "id": "bein_fr2_hd_s1", "name": "beIN FR2 HD (S1)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-french-2-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67389.m3u8" },
+        { "id": "bein_en1_hd_s1", "name": "beIN EN1 HD (S1)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-english-1-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67390.m3u8" },
+        { "id": "bein_en2_hd_s1", "name": "beIN EN2 HD (S1)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-english-2-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67386.m3u8" },
+        { "id": "bein_xtra1_hd_s1", "name": "beIN Xtra1 HD (S1)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-xtra-1-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/219946.m3u8" },
+        { "id": "bein_xtra2_hd_s1", "name": "beIN Xtra2 HD (S1)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-xtra-2-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/219949.m3u8" },
+        { "id": "bein_xtra3_hd_s1", "name": "beIN Xtra3 HD (S1)", "logo": "", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/222053.m3u8" },
+        { "id": "bein_afc_hd_s1", "name": "beIN AFC HD (S1)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-afc-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/219940.m3u8" },
+        { "id": "bein_afc1_hd_s1", "name": "beIN AFC1 HD (S1)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-afc-1-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/219943.m3u8" },
+        { "id": "bein_afc2_hd_s1", "name": "beIN AFC2 HD (S1)", "logo": "", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/222044.m3u8" },
+        { "id": "bein_afc3_hd_s1", "name": "beIN AFC3 HD (S1)", "logo": "", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/222045.m3u8" },
+        { "id": "bein_afc4_hd_s1", "name": "beIN AFC4 HD (S1)", "logo": "", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/222046.m3u8" },
+        { "id": "bein_afc5_hd_s1", "name": "beIN AFC5 HD (S1)", "logo": "", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/222047.m3u8" },
+        { "id": "ar_bein_gourmet_hd", "name": "AR: Bein Gourmet HD", "logo": "http://f.cdnrdn.com/chlogo/Bein_gurme.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67428.m3u8" },
+        { "id": "ar_bein_drama_hd", "name": "AR: Bein Drama HD", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-drama-1-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67416.m3u8" },
+        { "id": "ar_bein_fox_life_hd", "name": "AR: Bein Fox Life HD", "logo": "http://f.cdnrdn.com/chlogo/fox_life.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67419.m3u8" },
+        { "id": "ar_bein_fox_movies_hd", "name": "AR: Bein Fox Movies HD", "logo": "http://f.cdnrdn.com/chlogo2/arabic/foxmoviess.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67422.m3u8" },
+        { "id": "ar_bein_fox_action_movies_hd", "name": "AR: Bein Fox Action Movies HD", "logo": "http://f.cdnrdn.com/chlogo2/arabic/beinfoxaction.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67423.m3u8" },
+        { "id": "ar_bein_star_world_hd", "name": "AR: Bein Star World HD", "logo": "http://f.cdnrdn.com/chlogo2/arabic/starworldd.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67424.m3u8" },
+        { "id": "ar_bein_star_movies_hd", "name": "AR: Bein Star Movies HD", "logo": "http://f.cdnrdn.com/chlogo2/arabic/ben-movies-star.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67425.m3u8" },
+        { "id": "ar_bein_bbc_earth_hd", "name": "AR: Bein BBC Earth HD", "logo": "http://f.cdnrdn.com/chlogo2/indian/BBCEarthlogo.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67433.m3u8" },
+        { "id": "ar_bein_nat_geo_wild_hd", "name": "AR: Bein Nat geo Wild HD", "logo": "", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/116400.m3u8" },
+        { "id": "ar_bein_nat_geo_hd", "name": "AR: Bein Nat Geo HD", "logo": "", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/116401.m3u8" },
+        { "id": "fr_bein_sport_1_hd", "name": "FR: BEIN SPORT 1 HD", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-1-qa-fr.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/17.m3u8" },
+        { "id": "fr_bein_sport_2_hd", "name": "FR: BEIN SPORT 2 HD", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-2-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/18.m3u8" },
+        { "id": "fr_bein_sport_3_hd", "name": "FR: BEIN SPORT 3 HD", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-3-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/19.m3u8" },
+        { "id": "fr_bein_sport_max_4_hd", "name": "FR: BEIN SPORT MAX 4 HD", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-max-4-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/3902.m3u8" },
+        { "id": "fr_bein_sport_max_5_hd", "name": "FR: BEIN SPORT MAX 5 HD", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-max-5-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/135399.m3u8" },
+        { "id": "fr_bein_sport_max_6_hd", "name": "FR: BEIN SPORT MAX 6 HD", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-max-6-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/3904.m3u8" },
+        { "id": "fr_bein_sport_max_7_hd", "name": "FR: BEIN SPORT MAX 7 HD", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-max-7-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/3965.m3u8" },
+        { "id": "fr_bein_sport_max_8_hd", "name": "FR: BEIN SPORT MAX 8 HD", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-max-8-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/135400.m3u8" },
+        { "id": "fr_bein_sport_max_9_hd", "name": "FR: BEIN SPORT MAX 9 HD", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-max-9-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/135401.m3u8" },
+        { "id": "fr_bein_sport_max_10_hd", "name": "FR: BEIN SPORT MAX 10 HD", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-max-10-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/135402.m3u8" },
+        { "id": "ar_bein_baraem_hd", "name": "AR: Bein Baraem HD", "logo": "http://f.cdnrdn.com/chlogo/baraem_q_Logo.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67435.m3u8" },
+        { "id": "ar_bein_jeem_hd", "name": "AR: Bein jeem HD", "logo": "http://f.cdnrdn.com/chlogo/jeem.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/116402.m3u8" },
+        { "id": "tr_bein_sport_1_hd", "name": "TR: BEIN SPORT 1 HD", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-1-qa-fr.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/140040.m3u8" },
+        { "id": "tr_bein_sport_2_hd", "name": "TR: BEIN SPORT 2 HD", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-2-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/140042.m3u8" },
+        { "id": "tr_bein_sport_3_hd", "name": "TR: BEIN SPORT 3 HD", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-3-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/140043.m3u8" },
+        { "id": "tr_bein_sport_4_hd", "name": "TR: BEIN SPORT 4 HD", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-4-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/140041.m3u8" },
+        { "id": "tr_bein_max_sports_1_hd", "name": "TR: BEIN MAX SPORTS 1 HD", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-turkiye-qa-tr.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/140044.m3u8" },
+        { "id": "tr_bein_max_sports_2_hd", "name": "TR: BEIN MAX SPORTS 2 HD", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-turkiye-qa-tr.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/140045.m3u8" },
+        { "id": "tr_bein_iz_hd", "name": "TR: BEIN IZ HD", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-iz-qa-tr.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/140093.m3u8" }
       ]
     }
   ]
