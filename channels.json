@@ -1,29 +1,72 @@
-{
-  "provider": "MyTV",
+ {
+  "provider": "Buz TV Pro",
   "packages": [
     {
       "id": "pkg_bein",
       "name": "Bein Sports",
-      "logo": "https://example.com/logos/bein.png",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Thamaniyah_logo.png",
       "channels": [
         {
           "id": "bein1",
           "name": "Bein Sports 1 HD",
-          "logo": "https://example.com/channels/bein1.png",
+          "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Thamaniyah_logo.png",
           "stream": "https://ketsdt.lls.pbs.org/out/v1/03c094dbd7874a4a8c3fe9fb10081bdb/index.m3u8"
+        },
+        {
+          "id": "bein2",
+          "name": "Bein Sports 2 HD",
+          "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Thamaniyah_logo.png",
+          "stream": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4"
+        },
+        {
+          "id": "bein3",
+          "name": "Bein Sports 3 HD",
+          "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Thamaniyah_logo.png",
+          "stream": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_5mb.mp4"
         }
       ]
     },
     {
       "id": "pkg_morocco",
       "name": "قنوات مغربية",
-      "logo": "https://example.com/logos/morocco.png",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Thamaniyah_logo.png",
       "channels": [
         {
           "id": "alaoula",
           "name": "Al Aoula",
-          "logo": "https://example.com/channels/alaoula.png",
-          "stream": "https://cdn.example.com/alaoula/playlist.m3u8"
+          "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Thamaniyah_logo.png",
+          "stream": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4"
+        },
+        {
+          "id": "2m",
+          "name": "2M",
+          "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Thamaniyah_logo.png",
+          "stream": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4"
+        }
+      ]
+    },
+    {
+      "id": "pkg_saudi",
+      "name": "قنوات سعودية",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Thamaniyah_logo.png",
+      "channels": [
+        {
+          "id": "mbc1",
+          "name": "MBC 1",
+          "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Thamaniyah_logo.png",
+          "stream": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4"
+        },
+        {
+          "id": "mbc2",
+          "name": "MBC 2",
+          "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Thamaniyah_logo.png",
+          "stream": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4"
+        },
+        {
+          "id": "rotana",
+          "name": "Rotana",
+          "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Thamaniyah_logo.png",
+          "stream": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_5mb.mp4"
         }
       ]
     }
