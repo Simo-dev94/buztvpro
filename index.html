@@ -89,9 +89,35 @@
     .hidden{display:none !important}
     .sep{height:1px; background:#1f2937; margin:8px 0}
     .upload{display:none}
-  </style>
+    /* === Enhancements: modern look & feel === */
+  :root[data-theme="light"]{
+    --bg:#eef2ff; --panel:rgba(255,255,255,.8); --muted:#e5e7eb; --card:rgba(255,255,255,.7); --txt:#0b1220; --txt-dim:#374151; --primary:#0ea5e9; --accent:#8b5cf6; --danger:#ef4444; --ok:#10b981; --warn:#f59e0b;
+  }
+  body{backdrop-filter:saturate(120%) blur(6px)}
+  .panel{box-shadow:0 10px 30px rgba(0,0,0,.25)}
+  .btn{transition:transform .12s ease, box-shadow .12s ease}
+  .btn:hover{transform:translateY(-1px); box-shadow:0 6px 18px rgba(0,0,0,.25)}
+  .btn.primary{box-shadow:0 8px 24px rgba(34,211,238,.35)}
+  .pkg{transition:background .15s ease, transform .08s ease}
+  .pkg:active{transform:scale(.98)}
+  .card{transition:transform .15s ease, box-shadow .2s ease}
+  .card:hover{transform:translateY(-2px); box-shadow:0 12px 28px rgba(0,0,0,.35)}
+  video{border-bottom-left-radius:14px; border-bottom-right-radius:14px}
+  /* gradient text brand */
+  .brand{background:linear-gradient(135deg,var(--primary),var(--accent)); -webkit-background-clip:text; background-clip:text; color:transparent}
+  /* scrollbars */
+  *{scrollbar-width:thin; scrollbar-color:#475569 transparent}
+  *::-webkit-scrollbar{height:8px;width:8px}
+  *::-webkit-scrollbar-thumb{background:#475569;border-radius:8px}
+  *::-webkit-scrollbar-track{background:transparent}
+  /* toast */
+  .toasts{position:fixed; right:16px; bottom:16px; display:flex; flex-direction:column; gap:10px; z-index:50}
+  .toast{background:var(--panel); border:1px solid #334155; color:var(--txt); padding:10px 12px; border-radius:12px; box-shadow:0 10px 24px rgba(0,0,0,.3); animation:fadeIn .2s ease}
+  @keyframes fadeIn{from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:translateY(0)}}
+</style>
 </head>
 <body>
+  <div class="toasts" id="toasts"></div>
   <div class="app">
     <!-- Sidebar: Packages -->
     <aside class="panel sidebar">
@@ -116,7 +142,7 @@
 
     <!-- Main: Channels grid -->
     <section class="panel main">
-      <div class="toolbar">
+      <div class=\"toolbar\"><button class=\"btn\" id=\"btnTheme\">🌓 Theme</button>
         <input id="search" type="search" placeholder="Search channel or package… ( / to focus )" />
         <button class="btn" id="btnAdd">+ Add Channel</button>
         <button class="btn" id="btnAddPkg">+ Add Package</button>
@@ -213,6 +239,7 @@
     el('btnAddPkg').onclick = ()=> addPackage();
     el('btnReload').onclick = ()=> reloadFromFile();
     el('btnStop').onclick = stopPlayback;
+    if (el('btnTheme')) { el('btnTheme').onclick = toggleTheme; applySavedTheme(); }
 
     const search = el('search');
     search.addEventListener('input', (e)=>{ searchTerm = e.target.value.toLowerCase(); renderGrid(); });
@@ -317,7 +344,9 @@
   }
 
   function toast(text){
-    console.log(text);
+    const wrap = el('toasts');
+    const n = document.createElement('div'); n.className='toast'; n.textContent=text;
+    wrap.appendChild(n); setTimeout(()=>{ n.style.opacity='0'; n.style.transform='translateY(6px)'; setTimeout(()=> n.remove(), 250); }, 1800);
   }
 
   /*********************
@@ -437,6 +466,8 @@
 
   // Kick off
   init();
+  function toggleTheme(){ const isLight = document.documentElement.getAttribute('data-theme')==='light'; if(isLight){ document.documentElement.removeAttribute('data-theme'); localStorage.removeItem('theme'); toast('Theme: Dark'); } else { document.documentElement.setAttribute('data-theme','light'); localStorage.setItem('theme','light'); toast('Theme: Light'); } }
+  function applySavedTheme(){ const t=localStorage.getItem('theme'); if(t==='light'){ document.documentElement.setAttribute('data-theme','light'); } }
   </script>
 </body>
 </html>
