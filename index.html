@@ -7,29 +7,43 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.13"></script>
+  <!-- hls.js for M3U8 playback in browsers that need it -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
   <style>
     :root{
-      --bg:#0f172a; --panel:#111827; --muted:#1f2937; --card:#0b1220; --txt:#e5e7eb; --txt-dim:#9ca3af;
-      --primary:#22d3ee; --accent:#a78bfa; --danger:#ef4444; --ok:#10b981; --warn:#f59e0b; --radius:16px;
-    }
-    :root[data-theme="light"]{
-      --bg:#eef2ff; --panel:rgba(255,255,255,.8); --muted:#e5e7eb; --card:rgba(255,255,255,.7);
-      --txt:#0b1220; --txt-dim:#374151; --primary:#0ea5e9; --accent:#8b5cf6; --danger:#ef4444; --ok:#10b981; --warn:#f59e0b;
+      --bg:#0f172a; /* slate-900 */
+      --panel:#111827; /* gray-900 */
+      --muted:#1f2937; /* gray-800 */
+      --card:#0b1220; /* slightly darker */
+      --txt:#e5e7eb; /* gray-200 */
+      --txt-dim:#9ca3af; /* gray-400 */
+      --primary:#22d3ee; /* cyan-400 */
+      --accent:#a78bfa; /* violet-400 */
+      --danger:#ef4444; /* red-500 */
+      --ok:#10b981; /* emerald-500 */
+      --warn:#f59e0b; /* amber-500 */
+      --radius:16px;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica,Arial; background: radial-gradient(1200px 800px at 10% -10%, #1d2854 0%, transparent 60%), radial-gradient(1200px 800px at 110% 10%, #073b4c 0%, transparent 60%), var(--bg); color:var(--txt); overflow:hidden; backdrop-filter:saturate(120%) blur(6px)}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 10% -10%, #1d2854 0%, transparent 60%),
+                  radial-gradient(1200px 800px at 110% 10%, #073b4c 0%, transparent 60%),
+                  var(--bg);
+      color:var(--txt);
+      overflow:hidden;
+    }
     .app{display:grid; grid-template-columns:280px 1fr 440px; gap:14px; padding:14px; height:100%}
-    .panel{background:var(--panel); border:1px solid #1f2937; border-radius:var(--radius); overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,.25)}
+    .panel{background:var(--panel); border:1px solid #1f2937; border-radius:var(--radius); overflow:hidden}
     .sidebar{display:flex; flex-direction:column}
     .sidebar header{padding:16px 16px 6px; border-bottom:1px solid #1f2937}
-    .brand{font-weight:700; letter-spacing:.3px; background:linear-gradient(135deg,var(--primary),var(--accent)); -webkit-background-clip:text; background-clip:text; color:transparent}
+    .brand{font-weight:700; letter-spacing:.3px}
     .provider{font-size:12px; color:var(--txt-dim)}
     .pkg-list{overflow:auto; padding:8px}
-    .pkg{display:flex; align-items:center; gap:10px; padding:10px; border-radius:12px; cursor:pointer; border:1px solid transparent; transition:background .15s ease, transform .08s ease}
+    .pkg{display:flex; align-items:center; gap:10px; padding:10px; border-radius:12px; cursor:pointer; border:1px solid transparent}
     .pkg:hover{background:#0c1325}
-    .pkg:active{transform:scale(.98)}
     .pkg.active{background:#0c1325; border-color:#334155}
     .pkg img{width:28px; height:28px; object-fit:contain}
     .pkg .name{font-size:14px; font-weight:600}
@@ -38,15 +52,14 @@
     .main{display:flex; flex-direction:column}
     .toolbar{display:flex; gap:8px; align-items:center; padding:12px; border-bottom:1px solid #1f2937; background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));}
     .toolbar input[type="search"]{flex:1; background:#0b1220; color:var(--txt); border:1px solid #1f2937; border-radius:12px; padding:10px 12px; outline:none}
-    .btn{background:#0b1220; color:var(--txt); border:1px solid #334155; padding:10px 12px; border-radius:12px; font-weight:600; cursor:pointer; transition:transform .12s ease, box-shadow .12s ease}
-    .btn:hover{transform:translateY(-1px); box-shadow:0 6px 18px rgba(0,0,0,.25)}
-    .btn.primary{background:linear-gradient(135deg, var(--primary), var(--accent)); color:#0b1220; border:none; box-shadow:0 8px 24px rgba(34,211,238,.35)}
+    .btn{background:#0b1220; color:var(--txt); border:1px solid #334155; padding:10px 12px; border-radius:12px; font-weight:600; cursor:pointer}
+    .btn:hover{filter:brightness(1.1)}
+    .btn.primary{background:linear-gradient(135deg, var(--primary), var(--accent)); color:#0b1220; border:none}
     .btn.danger{background:#2a0f12; border-color:#7f1d1d; color:#fecaca}
     .hint{font-size:12px; color:var(--txt-dim); margin-left:8px}
 
     .grid{flex:1; overflow:auto; padding:14px; display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:12px}
-    .card{background:var(--card); border:1px solid #1f2937; border-radius:14px; padding:10px; display:flex; flex-direction:column; gap:8px; transition:transform .15s ease, box-shadow .2s ease}
-    .card:hover{transform:translateY(-2px); box-shadow:0 12px 28px rgba(0,0,0,.35)}
+    .card{background:var(--card); border:1px solid #1f2937; border-radius:14px; padding:10px; display:flex; flex-direction:column; gap:8px}
     .card .top{display:flex; align-items:center; gap:10px}
     .card img.logo{width:40px; height:40px; object-fit:contain; background:#0b1220; border-radius:10px; border:1px solid #1f2937}
     .card .title{font-weight:700; font-size:14px}
@@ -57,7 +70,7 @@
 
     .player{display:flex; flex-direction:column; height:100%}
     .player header{padding:12px; border-bottom:1px solid #1f2937; display:flex; justify-content:space-between; align-items:center}
-    video{width:100%; height:auto; background:#000; border-bottom-left-radius:14px; border-bottom-right-radius:14px}
+    video{width:100%; height:auto; background:#000; border-bottom:1px solid #1f2937}
     .now{padding:12px; font-size:14px}
 
     .modal-backdrop{position:fixed; inset:0; background:rgba(0,0,0,.6); display:none; align-items:center; justify-content:center}
@@ -74,21 +87,11 @@
 
     .empty{opacity:.8; text-align:center; padding:30px}
     .hidden{display:none !important}
-
-    /* Scrollbars */
-    *{scrollbar-width:thin; scrollbar-color:#475569 transparent}
-    *::-webkit-scrollbar{height:8px;width:8px}
-    *::-webkit-scrollbar-thumb{background:#475569;border-radius:8px}
-    *::-webkit-scrollbar-track{background:transparent}
-
-    /* Toasts */
-    .toasts{position:fixed; right:16px; bottom:16px; display:flex; flex-direction:column; gap:10px; z-index:50}
-    .toast{background:var(--panel); border:1px solid #334155; color:var(--txt); padding:10px 12px; border-radius:12px; box-shadow:0 10px 24px rgba(0,0,0,.3); animation:fadeIn .2s ease}
-    @keyframes fadeIn{from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:translateY(0)}}
+    .sep{height:1px; background:#1f2937; margin:8px 0}
+    .upload{display:none}
   </style>
 </head>
 <body>
-  <div class="toasts" id="toasts"></div>
   <div class="app">
     <!-- Sidebar: Packages -->
     <aside class="panel sidebar">
@@ -104,7 +107,7 @@
           <input class="upload" id="fileInput" type="file" accept="application/json" />
         </div>
         <textarea id="jsonArea" placeholder="Paste / edit JSON here. Click Save to apply."></textarea>
-        <div style="display:flex; gap:8px; margin-top:8px; align-items:center">
+        <div style="display:flex; gap:8px; margin-top:8px">
           <button class="btn primary" id="btnSaveJson">Save</button>
           <span class="hint">Auto-reloads every <span id="pollSecs">15</span>s if channels.json is available.</span>
         </div>
@@ -114,8 +117,6 @@
     <!-- Main: Channels grid -->
     <section class="panel main">
       <div class="toolbar">
-        <button class="btn" id="btnTheme">🌓 Theme</button>
-        <button class="btn" id="btnProxy">🔌 Proxy: Off</button>
         <input id="search" type="search" placeholder="Search channel or package… ( / to focus )" />
         <button class="btn" id="btnAdd">+ Add Channel</button>
         <button class="btn" id="btnAddPkg">+ Add Package</button>
@@ -164,7 +165,11 @@
    *********************/
   const DEFAULT_JSON = {
     provider: "Your Provider",
-    packages: [ { id: "pkg_sample", name: "Sample Package", logo: "", channels: [ { id: "ch1", name: "Sample Channel", logo: "", stream: "" } ] } ]
+    packages: [
+      { id: "pkg_sample", name: "Sample Package", logo: "", channels: [
+        { id: "ch1", name: "Sample Channel", logo: "", stream: "" }
+      ] }
+    ]
   };
 
   let data = structuredClone(DEFAULT_JSON);
@@ -173,10 +178,6 @@
   const POLL_MS = 15000; // 15s
   let pollTimer = null;
   let editMode = null; // {pkgId, channelId} or null
-
-  // Proxy state (for mixed content/CORS)
-  let useProxy = JSON.parse(localStorage.getItem('use_proxy')||'false');
-  let proxyBase = localStorage.getItem('proxy_base') || '';
 
   const el = (id)=>document.getElementById(id);
 
@@ -187,6 +188,7 @@
       try{ data = JSON.parse(cache); }catch{ data = structuredClone(DEFAULT_JSON); }
       renderAll();
     } else {
+      // Try to fetch channels.json in same folder
       await reloadFromFile(true);
     }
     startPolling();
@@ -195,29 +197,31 @@
 
   function bindUI(){
     el('btnImport').onclick = ()=> el('fileInput').click();
-    el('fileInput').onchange = async (e)=>{ const file=e.target.files[0]; if(!file) return; const text=await file.text(); el('jsonArea').value=text; saveFromTextarea(); };
-    el('btnExport').onclick = ()=>{ const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}); const url=URL.createObjectURL(blob); const a=Object.assign(document.createElement('a'),{href:url,download:'channels.json'}); document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url); };
+    el('fileInput').onchange = async (e)=>{
+      const file = e.target.files[0]; if(!file) return;
+      const text = await file.text();
+      el('jsonArea').value = text; saveFromTextarea();
+    };
+    el('btnExport').onclick = ()=>{
+      const blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
+      const url = URL.createObjectURL(blob);
+      const a = Object.assign(document.createElement('a'), {href:url, download:'channels.json'});
+      document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    };
     el('btnSaveJson').onclick = saveFromTextarea;
     el('btnAdd').onclick = ()=> openModal();
     el('btnAddPkg').onclick = ()=> addPackage();
     el('btnReload').onclick = ()=> reloadFromFile();
     el('btnStop').onclick = stopPlayback;
 
-    const search=el('search');
-    search.addEventListener('input',(e)=>{ searchTerm=e.target.value.toLowerCase(); renderGrid(); });
-    window.addEventListener('keydown',(e)=>{ if(e.key==='/' ){ e.preventDefault(); search.focus(); } });
+    const search = el('search');
+    search.addEventListener('input', (e)=>{ searchTerm = e.target.value.toLowerCase(); renderGrid(); });
+    window.addEventListener('keydown', (e)=>{ if(e.key === '/'){ e.preventDefault(); search.focus(); } });
 
-    // Theme
-    el('btnTheme').onclick = toggleTheme; applySavedTheme();
-
-    // Proxy toggle (click = on/off, right-click = set base URL)
-    const btnProxy = el('btnProxy');
-    if(btnProxy){
-      const sync = ()=> btnProxy.textContent = `🔌 Proxy: ${useProxy? 'On':'Off'}`;
-      sync();
-      btnProxy.onclick = ()=>{ useProxy = !useProxy; localStorage.setItem('use_proxy', JSON.stringify(useProxy)); sync(); toast(`Proxy ${useProxy?'enabled':'disabled'}`); };
-      btnProxy.oncontextmenu = (e)=>{ e.preventDefault(); const url = prompt('Proxy base URL (e.g. https://your-worker.workers.dev/?url= )', proxyBase || ''); if(url!==null){ proxyBase = url.trim(); localStorage.setItem('proxy_base', proxyBase); toast('Proxy base saved'); } };
-    }
+    // Modal controls
+    el('btnCancel').onclick = closeModal;
+    el('btnSave').onclick = saveModal;
+    el('btnDelete').onclick = deleteChannel;
 
     // JSON editor live view
     el('jsonArea').value = JSON.stringify(data, null, 2);
@@ -231,11 +235,11 @@
 
   async function reloadFromFile(silent=false){
     try{
-      const res = await fetch(`channels.json?cb=${Date.now()}`, {cache:'no-store'});
+      const res = await fetch(`channels.json?cb=${Date.now()}` , {cache:'no-store'});
       if(!res.ok) { if(!silent) toast('channels.json not found in this folder'); return; }
       const fresh = await res.json();
       if(JSON.stringify(fresh) !== JSON.stringify(data)){
-        data = fresh; persist(); renderAll(); if(!silent) toast('Loaded latest channels.json');
+        data = fresh; persist(); renderAll(); toast('Loaded latest channels.json');
       } else if(!silent){ toast('No changes found'); }
     }catch(err){ if(!silent) toast('Could not load channels.json'); }
   }
@@ -245,6 +249,7 @@
   function renderAll(){
     el('providerName').textContent = data.provider || '—';
     renderPackages();
+    // auto-select first package if none
     if(!selectedPkgId && data.packages?.length){ selectedPkgId = data.packages[0].id; }
     renderGrid();
     el('jsonArea').value = JSON.stringify(data, null, 2);
@@ -312,52 +317,26 @@
   }
 
   function toast(text){
-    const wrap = el('toasts');
-    const n = document.createElement('div'); n.className='toast'; n.textContent=text;
-    wrap.appendChild(n); setTimeout(()=>{ n.style.opacity='0'; n.style.transform='translateY(6px)'; setTimeout(()=> n.remove(), 250); }, 1800);
+    console.log(text);
   }
 
   /*********************
    * Playback (HLS/MSE) *
    *********************/
   let hls = null; const video = ()=> el('video');
-
-  function getPlayableUrl(raw){
-    if(!raw) return '';
-    const isHttp = raw.startsWith('http:');
-    // Mixed content: HTTPS page + HTTP stream => block unless proxy enabled
-    if (location.protocol==='https:' && isHttp) {
-      if (useProxy && proxyBase) return proxyBase + encodeURIComponent(raw);
-      toast('⚠️ Mixed content blocked. Enable Proxy (right-click Proxy to set URL).');
-      return '';
-    }
-    if (useProxy && proxyBase) return proxyBase + encodeURIComponent(raw);
-    return raw;
-  }
-  function attachHls(v, url){
-    if (hls){ try{ hls.destroy(); }catch{} hls=null; }
-    hls = new Hls({ maxBufferLength: 30, enableWorker: true });
-    hls.loadSource(url);
-    hls.attachMedia(v);
-    hls.on(Hls.Events.MANIFEST_PARSED, ()=> v.play().catch(()=>{}));
-    hls.on(Hls.Events.ERROR, (_, data)=>{
-      const {type, details, fatal} = data||{};
-      console.warn('HLS error', type, details, data);
-      toast(`HLS ${type||''} ${details||''}`);
-      if (fatal){ try{ hls.destroy(); }catch{} hls=null; }
-    });
-  }
   function playChannel(ch){
-    const raw = ch.stream || '';
-    const url = getPlayableUrl(raw);
-    if(!url){ toast('Missing/blocked stream URL'); return; }
+    const url = ch.stream || '';
+    if(!url){ toast('Missing stream URL'); return; }
     const v = video();
-    v.crossOrigin = 'anonymous';
     el('nowTitle').textContent = ch.name || ch.id;
     el('nowMeta').textContent = `${selectedPkgId} • ${ch.id}`;
 
-    if(window.Hls && Hls.isSupported()){
-      attachHls(v, url);
+    if(Hls.isSupported()){
+      if(hls){ hls.destroy(); }
+      hls = new Hls({maxBufferLength:30});
+      hls.loadSource(url);
+      hls.attachMedia(v);
+      hls.on(Hls.Events.MANIFEST_PARSED, ()=> v.play().catch(()=>{}));
     } else if(v.canPlayType('application/vnd.apple.mpegurl')){
       v.src = url; v.play().catch(()=>{});
     } else {
@@ -366,7 +345,7 @@
   }
   function stopPlayback(){
     const v = video();
-    if(hls){ try{ hls.destroy(); }catch{} hls=null; }
+    if(hls){ hls.destroy(); hls=null; }
     v.pause(); v.removeAttribute('src'); v.load();
     el('nowTitle').textContent = 'Select a channel to start…';
     el('nowMeta').textContent = '—';
@@ -378,7 +357,7 @@
   function saveFromTextarea(){
     try{
       const parsed = JSON.parse(el('jsonArea').value);
-      data = parsed; persist(); renderAll(); toast('Saved (local)');
+      data = parsed; persist(); renderAll(); toast('Saved');
     }catch(err){ alert('Invalid JSON: '+err.message); }
   }
 
@@ -407,11 +386,26 @@
   function closeModal(){ el('modalBackdrop').style.display='none'; }
   function saveModal(){
     const pkgId = el('m_pkg').value.trim();
-    const ch = { id: el('m_id').value.trim(), name: el('m_name').value.trim(), logo: el('m_logo').value.trim(), stream: el('m_stream').value.trim() };
+    const ch = {
+      id: el('m_id').value.trim(),
+      name: el('m_name').value.trim(),
+      logo: el('m_logo').value.trim(),
+      stream: el('m_stream').value.trim()
+    };
     if(!pkgId || !ch.id){ alert('Package and ID are required'); return; }
     let pkg = data.packages.find(p=>p.id===pkgId);
-    if(!pkg){ if(confirm('Package not found. Create it?')){ pkg = {id:pkgId, name:pkgId, logo:'', channels:[]}; data.packages.push(pkg); } else return; }
-    if(editMode){ const oldPkg = data.packages.find(p=>p.id===editMode.pkgId); if(oldPkg){ const idx = oldPkg.channels.findIndex(x=>x.id===editMode.channelId); if(idx>-1) oldPkg.channels.splice(idx, 1); } }
+    if(!pkg){
+      if(confirm('Package not found. Create it?')){ pkg = {id:pkgId, name:pkgId, logo:'', channels:[]}; data.packages.push(pkg); }
+      else return;
+    }
+    if(editMode){
+      const oldPkg = data.packages.find(p=>p.id===editMode.pkgId);
+      if(oldPkg){
+        const idx = oldPkg.channels.findIndex(x=>x.id===editMode.channelId);
+        if(idx>-1) oldPkg.channels.splice(idx, 1);
+      }
+    }
+    // push into (possibly new) package
     const exists = pkg.channels.find(x=>x.id===ch.id);
     if(exists){ if(!confirm('Channel with same ID exists. Overwrite?')) return; Object.assign(exists, ch); }
     else pkg.channels.push(ch);
@@ -427,7 +421,7 @@
   }
 
   // Paste support: detect if user pastes a full channel object
-  ;['m_id','m_name','m_logo','m_stream'].forEach(id=>{
+  ['m_id','m_name','m_logo','m_stream'].forEach(id=>{
     el(id).addEventListener('paste', (e)=>{
       const text = (e.clipboardData || window.clipboardData).getData('text');
       try{ const obj = JSON.parse(text); if(obj && (obj.id||obj.name||obj.stream)){
@@ -437,11 +431,9 @@
     });
   });
 
-  function copyToClipboard(text){ navigator.clipboard.writeText(text||'').then(()=> toast('Copied')).catch(()=>{}); }
-
-  // Theme helpers
-  function toggleTheme(){ const isLight = document.documentElement.getAttribute('data-theme')==='light'; if(isLight){ document.documentElement.removeAttribute('data-theme'); localStorage.removeItem('theme'); toast('Theme: Dark'); } else { document.documentElement.setAttribute('data-theme','light'); localStorage.setItem('theme','light'); toast('Theme: Light'); } }
-  function applySavedTheme(){ const t=localStorage.getItem('theme'); if(t==='light'){ document.documentElement.setAttribute('data-theme','light'); } }
+  function copyToClipboard(text){
+    navigator.clipboard.writeText(text||'').then(()=> toast('Copied')).catch(()=>{});
+  }
 
   // Kick off
   init();
