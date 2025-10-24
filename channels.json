@@ -3,8 +3,8 @@
   "packages": [
     {
       "id": "pkg_bein",
-      "name": "Bein Sports HD",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/BeIN-Sports-Logo.svg/946px-BeIN-Sports-Logo.svg.png",
+      "name": "Bein Sports",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Thamaniyah_logo.png",
       "channels": [
         { "id": "bein_news_hd_s1", "name": "beIN News HD (S1)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-news-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67374.m3u8" },
         { "id": "bein_hd_s1", "name": "beIN HD (S1)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67373.m3u8" },
@@ -71,132 +71,132 @@
         { "id": "tr_bein_iz_hd", "name": "TR: BEIN IZ HD", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-iz-qa-tr.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/140093.m3u8" }
       ]
     },
-  {
-  "id": "pkg_bein_sd",
-  "name": "Bein Sports SD",
-  "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Thamaniyah_logo.png",
-  "channels": [
     {
-      "id": "bein_sports_1_sd_s1",
-      "name": "beIN SPORTS 1 SD (S1)",
-      "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-1-qa-fr.png",
-      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67392.m3u8"
-    },
-    {
-      "id": "bein_sports_1_sd_s2",
-      "name": "beIN SPORTS 1 SD (S2)",
-      "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-1-qa-fr.png",
-      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/196189.m3u8"
-    },
-    {
-      "id": "bein_sports_2_sd_s1",
-      "name": "beIN SPORTS 2 SD (S1)",
-      "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-2-qa.png",
-      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67393.m3u8"
-    },
-    {
-      "id": "bein_sports_3_sd_s1",
-      "name": "beIN SPORTS 3 SD (S1)",
-      "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-3-qa.png",
-      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67394.m3u8"
-    },
-    {
-      "id": "bein_sports_4_sd_s1",
-      "name": "beIN SPORTS 4 SD (S1)",
-      "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-4-qa.png",
-      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67395.m3u8"
-    },
-    {
-      "id": "bein_sports_5_sd_s1",
-      "name": "beIN SPORTS 5 SD (S1)",
-      "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-5-qa.png",
-      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67396.m3u8"
-    },
-    {
-      "id": "bein_sports_6_sd_s1",
-      "name": "beIN SPORTS 6 SD (S1)",
-      "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-6-qa.png",
-      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67397.m3u8"
-    },
-    {
-      "id": "bein_sports_7_sd_s1",
-      "name": "beIN SPORTS 7 SD (S1)",
-      "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-7-qa.png",
-      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67398.m3u8"
-    },
-    {
-      "id": "bein_sports_8_sd_s1",
-      "name": "beIN SPORTS 8 SD (S1)",
-      "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-8-qa.png",
-      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67399.m3u8"
-    },
-    {
-      "id": "bein_sports_9_sd_s1",
-      "name": "beIN SPORTS 9 SD (S1)",
-      "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-9-qa.png",
-      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67400.m3u8"
-    },
-    {
-      "id": "bein_fr1_sd_s1",
-      "name": "beIN FR1 SD (S1)",
-      "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-french-1-qa.png",
-      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67405.m3u8"
-    },
-    {
-      "id": "bein_fr2_sd_s1",
-      "name": "beIN FR2 SD (S1)",
-      "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-french-2-qa.png",
-      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67406.m3u8"
-    },
-    {
-      "id": "bein_en1_sd_s1",
-      "name": "beIN EN1 SD (S1)",
-      "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-english-1-qa.png",
-      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67407.m3u8"
-    },
-    {
-      "id": "bein_afc_sd_s1",
-      "name": "beIN AFC SD (S1)",
-      "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-afc-qa.png",
-      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/219941.m3u8"
-    },
-    {
-      "id": "bein_afc1_sd_s1",
-      "name": "beIN AFC1 SD (S1)",
-      "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-afc-1-qa.png",
-      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/219944.m3u8"
-    },
-    {
-      "id": "bein_xtra1_sd_s1",
-      "name": "beIN Xtra1 SD (S1)",
-      "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-xtra-1-qa.png",
-      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/219947.m3u8"
-    },
-    {
-      "id": "bein_xtra2_sd_s1",
-      "name": "beIN Xtra2 SD (S1)",
-      "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-xtra-2-qa.png",
-      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/219950.m3u8"
-    },
-    {
-      "id": "fr_bein_sports_1_sd",
-      "name": "FR: BEIN SPORTS 1 SD",
-      "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-1-qa-fr.png",
-      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/157873.m3u8"
-    },
-    {
-      "id": "fr_bein_sports_2_sd",
-      "name": "FR: BEIN SPORTS 2 SD",
-      "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-2-qa.png",
-      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/157874.m3u8"
-    },
-    {
-      "id": "fr_bein_sports_3_sd",
-      "name": "FR: BEIN SPORTS 3 SD",
-      "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-3-qa.png",
-      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/157875.m3u8"
+      "id": "pkg_bein_sd",
+      "name": "Bein Sports SD",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Thamaniyah_logo.png",
+      "channels": [
+        {
+          "id": "bein_sports_1_sd_s1",
+          "name": "beIN SPORTS 1 SD (S1)",
+          "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-1-qa-fr.png",
+          "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67392.m3u8"
+        },
+        {
+          "id": "bein_sports_1_sd_s2",
+          "name": "beIN SPORTS 1 SD (S2)",
+          "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-1-qa-fr.png",
+          "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/196189.m3u8"
+        },
+        {
+          "id": "bein_sports_2_sd_s1",
+          "name": "beIN SPORTS 2 SD (S1)",
+          "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-2-qa.png",
+          "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67393.m3u8"
+        },
+        {
+          "id": "bein_sports_3_sd_s1",
+          "name": "beIN SPORTS 3 SD (S1)",
+          "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-3-qa.png",
+          "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67394.m3u8"
+        },
+        {
+          "id": "bein_sports_4_sd_s1",
+          "name": "beIN SPORTS 4 SD (S1)",
+          "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-4-qa.png",
+          "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67395.m3u8"
+        },
+        {
+          "id": "bein_sports_5_sd_s1",
+          "name": "beIN SPORTS 5 SD (S1)",
+          "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-5-qa.png",
+          "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67396.m3u8"
+        },
+        {
+          "id": "bein_sports_6_sd_s1",
+          "name": "beIN SPORTS 6 SD (S1)",
+          "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-6-qa.png",
+          "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67397.m3u8"
+        },
+        {
+          "id": "bein_sports_7_sd_s1",
+          "name": "beIN SPORTS 7 SD (S1)",
+          "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-7-qa.png",
+          "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67398.m3u8"
+        },
+        {
+          "id": "bein_sports_8_sd_s1",
+          "name": "beIN SPORTS 8 SD (S1)",
+          "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-8-qa.png",
+          "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67399.m3u8"
+        },
+        {
+          "id": "bein_sports_9_sd_s1",
+          "name": "beIN SPORTS 9 SD (S1)",
+          "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-9-qa.png",
+          "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67400.m3u8"
+        },
+        {
+          "id": "bein_fr1_sd_s1",
+          "name": "beIN FR1 SD (S1)",
+          "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-french-1-qa.png",
+          "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67405.m3u8"
+        },
+        {
+          "id": "bein_fr2_sd_s1",
+          "name": "beIN FR2 SD (S1)",
+          "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-french-2-qa.png",
+          "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67406.m3u8"
+        },
+        {
+          "id": "bein_en1_sd_s1",
+          "name": "beIN EN1 SD (S1)",
+          "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-english-1-qa.png",
+          "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67407.m3u8"
+        },
+        {
+          "id": "bein_afc_sd_s1",
+          "name": "beIN AFC SD (S1)",
+          "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-afc-qa.png",
+          "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/219941.m3u8"
+        },
+        {
+          "id": "bein_afc1_sd_s1",
+          "name": "beIN AFC1 SD (S1)",
+          "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-afc-1-qa.png",
+          "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/219944.m3u8"
+        },
+        {
+          "id": "bein_xtra1_sd_s1",
+          "name": "beIN Xtra1 SD (S1)",
+          "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-xtra-1-qa.png",
+          "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/219947.m3u8"
+        },
+        {
+          "id": "bein_xtra2_sd_s1",
+          "name": "beIN Xtra2 SD (S1)",
+          "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-xtra-2-qa.png",
+          "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/219950.m3u8"
+        },
+        {
+          "id": "fr_bein_sports_1_sd",
+          "name": "FR: BEIN SPORTS 1 SD",
+          "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-1-qa-fr.png",
+          "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/157873.m3u8"
+        },
+        {
+          "id": "fr_bein_sports_2_sd",
+          "name": "FR: BEIN SPORTS 2 SD",
+          "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-2-qa.png",
+          "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/157874.m3u8"
+        },
+        {
+          "id": "fr_bein_sports_3_sd",
+          "name": "FR: BEIN SPORTS 3 SD",
+          "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-3-qa.png",
+          "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/157875.m3u8"
+        }
+      ]
     }
   ]
-}
- ]
 }
