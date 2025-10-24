@@ -1,6 +1,66 @@
 {
   "provider": "Buz TV Pro",
-  "packages": [
+  "packages": [{
+  "id": "pkg_algeria_4k",
+  "name": "Algeria 4K",
+  "logo": "https://www.lyngsat.com/logo/tv/aa/al-24-news-dz.png",
+  "channels": [
+    {
+      "id": "dz_al24_4k",
+      "name": "ALG: AL24 4K",
+      "logo": "https://www.lyngsat.com/logo/tv/aa/al-24-news-dz.png",
+      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/220445.m3u8"
+    },
+    {
+      "id": "dz_a3_4k",
+      "name": "ALG: A3 4K",
+      "logo": "http://logo.lynxcontents.click/Logo/algeria/entv_3_al_thalitha.png",
+      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/220443.m3u8"
+    },
+    {
+      "id": "dz_canal_algerie_4k",
+      "name": "ALG: Canal Algerie 4K",
+      "logo": "http://logo.lynxcontents.click/Logo/algeria/entv_1_canal_algerie.png",
+      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/220446.m3u8"
+    },
+    {
+      "id": "dz_echorouk_4k",
+      "name": "ALG: Echorouk 4K",
+      "logo": "https://www.lyngsat.com/logo/tv/ee/echorouk_tv.png",
+      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/220444.m3u8"
+    },
+    {
+      "id": "dz_entv_4k",
+      "name": "ALG: ENTV 4K",
+      "logo": "http://logo.lynxcontents.click/Logo/algeria/entv_dz.png",
+      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/220442.m3u8"
+    },
+    {
+      "id": "dz_samira_4k",
+      "name": "ALG: Samira 4K",
+      "logo": "https://www.lyngsat.com/logo/tv/ss/samira_tv_dz.png",
+      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/220447.m3u8"
+    },
+    {
+      "id": "dz_tv4_4k",
+      "name": "ALG: TV 4 4K",
+      "logo": "http://logo.lynxcontents.click/Logo/algeria/entv_4_tv_tamazight.png",
+      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/220448.m3u8"
+    },
+    {
+      "id": "dz_tv6_4k",
+      "name": "ALG: TV 6 4K",
+      "logo": "http://logo.lynxcontents.click/Logo/algeria/tv-6-dz.png",
+      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/220449.m3u8"
+    },
+    {
+      "id": "dz_4kids",
+      "name": "ALG: 4Kids",
+      "logo": "https://www.lyngsat.com/logo/tv/num/4kids-dz.png",
+      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/220438.m3u8"
+    }
+  ]
+},
     {
       "id": "pkg_bein",
       "name": "Bein Sports HD",
