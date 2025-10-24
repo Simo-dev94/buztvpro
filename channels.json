@@ -4,7 +4,7 @@
     {
       "id": "pkg_bein",
       "name": "Bein Sports HD",
-      "logo": "https://assets-fr.imgfoot.com/media/cache/150x150/bein-sports-logo-67d0681760a6b.png",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/BeIN-Sports-Logo.svg/946px-BeIN-Sports-Logo.svg.png",
       "channels": [
         { "id": "bein_news_hd_s1", "name": "beIN News HD (S1)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-news-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67374.m3u8" },
         { "id": "bein_hd_s1", "name": "beIN HD (S1)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67373.m3u8" },
