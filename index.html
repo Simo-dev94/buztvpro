@@ -143,6 +143,7 @@
     <!-- Main: Channels grid -->
     <section class="panel main">
       <div class=\"toolbar\"><button class=\"btn\" id=\"btnTheme\">🌓 Theme</button>
+        <button class="btn" id="btnProxy">🔌 Proxy: Off</button>
         <input id="search" type="search" placeholder="Search channel or package… ( / to focus )" />
         <button class="btn" id="btnAdd">+ Add Channel</button>
         <button class="btn" id="btnAddPkg">+ Add Package</button>
@@ -202,6 +203,8 @@
   let selectedPkgId = null;
   let searchTerm = '';
   const POLL_MS = 15000; // 15s
+  let useProxy = JSON.parse(localStorage.getItem('use_proxy')||'false');
+  let proxyBase = localStorage.getItem('proxy_base') || '';
   let pollTimer = null;
   let editMode = null; // {pkgId, channelId} or null
 
@@ -240,6 +243,15 @@
     el('btnReload').onclick = ()=> reloadFromFile();
     el('btnStop').onclick = stopPlayback;
     if (el('btnTheme')) { el('btnTheme').onclick = toggleTheme; applySavedTheme(); }
+
+    // Proxy toggle (click = on/off, right-click = set base URL)
+    const btnProxy = el('btnProxy');
+    if(btnProxy){
+      const sync = ()=> btnProxy.textContent = `🔌 Proxy: ${useProxy? 'On':'Off'}`;
+      sync();
+      btnProxy.onclick = ()=>{ useProxy = !useProxy; localStorage.setItem('use_proxy', JSON.stringify(useProxy)); sync(); toast(`Proxy ${useProxy?'enabled':'disabled'}`); };
+      btnProxy.oncontextmenu = (e)=>{ e.preventDefault(); const url = prompt('Proxy base URL (e.g. https://your-worker.workers.dev/?url= )', proxyBase || ''); if(url!==null){ proxyBase = url.trim(); localStorage.setItem('proxy_base', proxyBase); toast('Proxy base saved'); } };
+    }
 
     const search = el('search');
     search.addEventListener('input', (e)=>{ searchTerm = e.target.value.toLowerCase(); renderGrid(); });
@@ -353,26 +365,47 @@
    * Playback (HLS/MSE) *
    *********************/
   let hls = null; const video = ()=> el('video');
+  function getPlayableUrl(raw){
+    if(!raw) return '';
+    const isHttp = raw.startsWith('http:');
+    if (location.protocol==='https:' && isHttp) {
+      if (useProxy && proxyBase) return proxyBase + encodeURIComponent(raw);
+      toast('⚠️ Mixed content blocked. Enable Proxy (right-click Proxy to set URL).');
+      return '';
+    }
+    if (useProxy && proxyBase) return proxyBase + encodeURIComponent(raw);
+    return raw;
+  }
+  function attachHls(v, url){
+    if (hls){ try{ hls.destroy(); }catch{} hls=null; }
+    hls = new Hls({ maxBufferLength: 30, enableWorker: true });
+    hls.loadSource(url);
+    hls.attachMedia(v);
+    hls.on(Hls.Events.MANIFEST_PARSED, ()=> v.play().catch(()=>{}));
+    hls.on(Hls.Events.ERROR, (_, data)=>{
+      const {type, details, fatal} = data||{};
+      console.warn('HLS error', type, details, data);
+      toast(`HLS ${type||''} ${details||''}`);
+      if (fatal){ try{ hls.destroy(); }catch{} hls=null; }
+    });
+  }
   function playChannel(ch){
-    const url = ch.stream || '';
-    if(!url){ toast('Missing stream URL'); return; }
-    const v = video();
+    const raw = ch.stream || '';
+    const url = getPlayableUrl(raw);
+    if(!url){ toast('Missing/blocked stream URL'); return; }
+    const v = el('video');
+    v.crossOrigin = 'anonymous';
     el('nowTitle').textContent = ch.name || ch.id;
     el('nowMeta').textContent = `${selectedPkgId} • ${ch.id}`;
 
-    if(Hls.isSupported()){
-      if(hls){ hls.destroy(); }
-      hls = new Hls({maxBufferLength:30});
-      hls.loadSource(url);
-      hls.attachMedia(v);
-      hls.on(Hls.Events.MANIFEST_PARSED, ()=> v.play().catch(()=>{}));
+    if(window.Hls && Hls.isSupported()){
+      attachHls(v, url);
     } else if(v.canPlayType('application/vnd.apple.mpegurl')){
       v.src = url; v.play().catch(()=>{});
     } else {
       toast('HLS not supported in this browser');
     }
-  }
-  function stopPlayback(){
+  }$1function stopPlayback(){
     const v = video();
     if(hls){ hls.destroy(); hls=null; }
     v.pause(); v.removeAttribute('src'); v.load();
