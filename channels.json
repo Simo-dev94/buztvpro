@@ -218,31 +218,31 @@
         {
           "id": "ma_al_aoula",
           "name": "Al Aoula",
-          "logo": "http://www.snrtlive.ma/sites/all/themes/snrtlive/images/alaoulax2.png",
+          "logo": "https://upload.wikimedia.org/wikipedia/ar/1/15/Logo_al_aoula.png",
           "stream": "https://cdnamd-hls-globecast.akamaized.net/live/ramdisk/al_aoula_inter/hls_snrt/al_aoula_inter.m3u8"
         },
         {
           "id": "ma_al_aoula_laayoune",
           "name": "Al Aoula Laayoune",
-          "logo": "http://www.snrtlive.ma/sites/all/themes/snrtlive/images/laayounex2.png",
+          "logo": "https://upload.wikimedia.org/wikipedia/ar/1/15/Logo_al_aoula.png",
           "stream": "http://cdn-hls.globecast.tv/live/ramdisk/al_aoula_laayoune/hls_snrt/index.m3u8"
         },
         {
           "id": "ma_al_maghribia",
           "name": "Al Maghribia",
-          "logo": "http://www.snrtlive.ma/sites/all/themes/snrtlive/images/almaghribiax2.png",
+          "logo": "https://upload.wikimedia.org/wikipedia/fr/5/54/Logo_al_maghribia.png",
           "stream": "http://cdnamd-hls-globecast.akamaized.net/live/ramdisk/al_maghribia_snrt/hls_snrt/index.m3u8"
         },
         {
           "id": "ma_arryadia",
           "name": "Arryadia",
-          "logo": "http://www.snrtlive.ma/sites/all/themes/snrtlive/images/arriyadiax2.png",
+          "logo": "https://upload.wikimedia.org/wikipedia/commons/0/03/Logo%2Barryadia%2Bmorocco.png",
           "stream": "http://cdnamd-hls-globecast.akamaized.net/live/ramdisk/arriadia/hls_snrt/index.m3u8"
         },
         {
           "id": "ma_assadissa",
           "name": "Assadissa",
-          "logo": "http://www.snrtlive.ma/sites/all/themes/snrtlive/images/assadissax2.png",
+          "logo": "https://upload.wikimedia.org/wikipedia/ar/a/ae/Logo_assadissa.png",
           "stream": "http://cdnamd-hls-globecast.akamaized.net/live/ramdisk/assadissa/hls_snrt/index.m3u8"
         },
         {
