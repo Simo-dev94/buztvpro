@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IPTV Control Panel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- hls.js for M3U8 playback in browsers that need it -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <style>
+    :root{
+      --bg:#0f172a; /* slate-900 */
+      --panel:#111827; /* gray-900 */
+      --muted:#1f2937; /* gray-800 */
+      --card:#0b1220; /* slightly darker */
+      --txt:#e5e7eb; /* gray-200 */
+      --txt-dim:#9ca3af; /* gray-400 */
+      --primary:#22d3ee; /* cyan-400 */
+      --accent:#a78bfa; /* violet-400 */
+      --danger:#ef4444; /* red-500 */
+      --ok:#10b981; /* emerald-500 */
+      --warn:#f59e0b; /* amber-500 */
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 10% -10%, #1d2854 0%, transparent 60%),
+                  radial-gradient(1200px 800px at 110% 10%, #073b4c 0%, transparent 60%),
+                  var(--bg);
+      color:var(--txt);
+      overflow:hidden;
+    }
+    .app{display:grid; grid-template-columns:280px 1fr 440px; gap:14px; padding:14px; height:100%}
+    .panel{background:var(--panel); border:1px solid #1f2937; border-radius:var(--radius); overflow:hidden}
+    .sidebar{display:flex; flex-direction:column}
+    .sidebar header{padding:16px 16px 6px; border-bottom:1px solid #1f2937}
+    .brand{font-weight:700; letter-spacing:.3px}
+    .provider{font-size:12px; color:var(--txt-dim)}
+    .pkg-list{overflow:auto; padding:8px}
+    .pkg{display:flex; align-items:center; gap:10px; padding:10px; border-radius:12px; cursor:pointer; border:1px solid transparent}
+    .pkg:hover{background:#0c1325}
+    .pkg.active{background:#0c1325; border-color:#334155}
+    .pkg img{width:28px; height:28px; object-fit:contain}
+    .pkg .name{font-size:14px; font-weight:600}
+    .pkg .count{margin-left:auto; font-size:12px; color:var(--txt-dim); background:#0b1220; padding:2px 8px; border-radius:999px}
+
+    .main{display:flex; flex-direction:column}
+    .toolbar{display:flex; gap:8px; align-items:center; padding:12px; border-bottom:1px solid #1f2937; background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));}
+    .toolbar input[type="search"]{flex:1; background:#0b1220; color:var(--txt); border:1px solid #1f2937; border-radius:12px; padding:10px 12px; outline:none}
+    .btn{background:#0b1220; color:var(--txt); border:1px solid #334155; padding:10px 12px; border-radius:12px; font-weight:600; cursor:pointer}
+    .btn:hover{filter:brightness(1.1)}
+    .btn.primary{background:linear-gradient(135deg, var(--primary), var(--accent)); color:#0b1220; border:none}
+    .btn.danger{background:#2a0f12; border-color:#7f1d1d; color:#fecaca}
+    .hint{font-size:12px; color:var(--txt-dim); margin-left:8px}
+
+    .grid{flex:1; overflow:auto; padding:14px; display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:12px}
+    .card{background:var(--card); border:1px solid #1f2937; border-radius:14px; padding:10px; display:flex; flex-direction:column; gap:8px}
+    .card .top{display:flex; align-items:center; gap:10px}
+    .card img.logo{width:40px; height:40px; object-fit:contain; background:#0b1220; border-radius:10px; border:1px solid #1f2937}
+    .card .title{font-weight:700; font-size:14px}
+    .tags{display:flex; gap:6px; flex-wrap:wrap}
+    .tag{font-size:11px; color:#a5b4fc; background:#0b1220; border:1px dashed #334155; padding:2px 6px; border-radius:999px}
+    .card .actions{display:flex; gap:8px}
+    .chip{font-size:11px; color:var(--txt-dim)}
+
+    .player{display:flex; flex-direction:column; height:100%}
+    .player header{padding:12px; border-bottom:1px solid #1f2937; display:flex; justify-content:space-between; align-items:center}
+    video{width:100%; height:auto; background:#000; border-bottom:1px solid #1f2937}
+    .now{padding:12px; font-size:14px}
+
+    .modal-backdrop{position:fixed; inset:0; background:rgba(0,0,0,.6); display:none; align-items:center; justify-content:center}
+    .modal{width:min(720px, 96vw); background:var(--panel); border:1px solid #334155; border-radius:16px; padding:16px; display:flex; flex-direction:column; gap:10px}
+    .modal h3{margin:0}
+    .row{display:grid; grid-template-columns:140px 1fr; gap:10px; align-items:center}
+    .row input{width:100%; background:#0b1220; color:var(--txt); border:1px solid #1f2937; border-radius:10px; padding:10px 12px}
+    .row small{color:var(--txt-dim)}
+    .modal .footer{display:flex; gap:8px; justify-content:flex-end}
+
+    .json-pane{padding:12px; border-top:1px solid #1f2937; background:#0b1220}
+    .json-pane textarea{width:100%; min-height:120px; background:#0b1220; color:#cbd5e1; border:1px solid #1f2937; border-radius:12px; padding:10px; font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+    .kbd{font-family:ui-monospace, monospace; font-size:12px; background:#0b1220; border:1px solid #475569; padding:2px 6px; border-radius:6px}
+
+    .empty{opacity:.8; text-align:center; padding:30px}
+    .hidden{display:none !important}
+    .sep{height:1px; background:#1f2937; margin:8px 0}
+    .upload{display:none}
+  </style>
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar: Packages -->
+    <aside class="panel sidebar">
+      <header>
+        <div class="brand">IPTV Panel</div>
+        <div class="provider" id="providerName">—</div>
+      </header>
+      <div class="pkg-list" id="pkgList"></div>
+      <div class="json-pane">
+        <div style="display:flex; gap:8px; align-items:center; margin-bottom:8px">
+          <button class="btn" id="btnImport">Import JSON</button>
+          <button class="btn" id="btnExport">Export JSON</button>
+          <input class="upload" id="fileInput" type="file" accept="application/json" />
+        </div>
+        <textarea id="jsonArea" placeholder="Paste / edit JSON here. Click Save to apply."></textarea>
+        <div style="display:flex; gap:8px; margin-top:8px">
+          <button class="btn primary" id="btnSaveJson">Save</button>
+          <span class="hint">Auto-reloads every <span id="pollSecs">15</span>s if channels.json is available.</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main: Channels grid -->
+    <section class="panel main">
+      <div class="toolbar">
+        <input id="search" type="search" placeholder="Search channel or package… ( / to focus )" />
+        <button class="btn" id="btnAdd">+ Add Channel</button>
+        <button class="btn" id="btnAddPkg">+ Add Package</button>
+        <button class="btn" id="btnReload">Reload from file</button>
+      </div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <!-- Player / Now playing -->
+    <section class="panel player">
+      <header>
+        <div>
+          <div style="font-weight:700">Now Playing</div>
+          <div class="chip" id="nowMeta">—</div>
+        </div>
+        <div>
+          <button class="btn" id="btnStop">Stop</button>
+        </div>
+      </header>
+      <video id="video" controls preload="none" poster="" playsinline></video>
+      <div class="now" id="nowTitle">Select a channel to start…</div>
+    </section>
+  </div>
+
+  <!-- Modal: Add/Edit Channel -->
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal" role="dialog" aria-modal="true">
+      <h3 id="modalTitle">Add Channel</h3>
+      <div class="row"><label for="m_pkg">Package</label><input id="m_pkg" placeholder="e.g. pkg_bein" /></div>
+      <div class="row"><label for="m_id">ID</label><input id="m_id" placeholder="unique id" /></div>
+      <div class="row"><label for="m_name">Name</label><input id="m_name" placeholder="Channel name" /></div>
+      <div class="row"><label for="m_logo">Logo URL</label><input id="m_logo" placeholder="https://…png" /></div>
+      <div class="row"><label for="m_stream">Stream URL</label><input id="m_stream" placeholder="https://…m3u8" /></div>
+      <div class="row"><small>Tip: You can also paste a full channel JSON object; fields above will auto-fill.</small></div>
+      <div class="footer">
+        <button class="btn" id="btnCancel">Cancel</button>
+        <button class="btn primary" id="btnSave">Save</button>
+        <button class="btn danger hidden" id="btnDelete">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  /*********************
+   * State & Utilities *
+   *********************/
+  const DEFAULT_JSON = {
+    provider: "Your Provider",
+    packages: [
+      { id: "pkg_sample", name: "Sample Package", logo: "", channels: [
+        { id: "ch1", name: "Sample Channel", logo: "", stream: "" }
+      ] }
+    ]
+  };
+
+  let data = structuredClone(DEFAULT_JSON);
+  let selectedPkgId = null;
+  let searchTerm = '';
+  const POLL_MS = 15000; // 15s
+  let pollTimer = null;
+  let editMode = null; // {pkgId, channelId} or null
+
+  const el = (id)=>document.getElementById(id);
+
+  // Load initial JSON (from localStorage or from channels.json if present)
+  async function init(){
+    const cache = localStorage.getItem('iptv_json');
+    if(cache){
+      try{ data = JSON.parse(cache); }catch{ data = structuredClone(DEFAULT_JSON); }
+      renderAll();
+    } else {
+      // Try to fetch channels.json in same folder
+      await reloadFromFile(true);
+    }
+    startPolling();
+    bindUI();
+  }
+
+  function bindUI(){
+    el('btnImport').onclick = ()=> el('fileInput').click();
+    el('fileInput').onchange = async (e)=>{
+      const file = e.target.files[0]; if(!file) return;
+      const text = await file.text();
+      el('jsonArea').value = text; saveFromTextarea();
+    };
+    el('btnExport').onclick = ()=>{
+      const blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
+      const url = URL.createObjectURL(blob);
+      const a = Object.assign(document.createElement('a'), {href:url, download:'channels.json'});
+      document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    };
+    el('btnSaveJson').onclick = saveFromTextarea;
+    el('btnAdd').onclick = ()=> openModal();
+    el('btnAddPkg').onclick = ()=> addPackage();
+    el('btnReload').onclick = ()=> reloadFromFile();
+    el('btnStop').onclick = stopPlayback;
+
+    const search = el('search');
+    search.addEventListener('input', (e)=>{ searchTerm = e.target.value.toLowerCase(); renderGrid(); });
+    window.addEventListener('keydown', (e)=>{ if(e.key === '/'){ e.preventDefault(); search.focus(); } });
+
+    // Modal controls
+    el('btnCancel').onclick = closeModal;
+    el('btnSave').onclick = saveModal;
+    el('btnDelete').onclick = deleteChannel;
+
+    // JSON editor live view
+    el('jsonArea').value = JSON.stringify(data, null, 2);
+  }
+
+  function startPolling(){
+    clearInterval(pollTimer);
+    pollTimer = setInterval(reloadFromFile, POLL_MS);
+    el('pollSecs').textContent = POLL_MS/1000;
+  }
+
+  async function reloadFromFile(silent=false){
+    try{
+      const res = await fetch(`channels.json?cb=${Date.now()}` , {cache:'no-store'});
+      if(!res.ok) { if(!silent) toast('channels.json not found in this folder'); return; }
+      const fresh = await res.json();
+      if(JSON.stringify(fresh) !== JSON.stringify(data)){
+        data = fresh; persist(); renderAll(); toast('Loaded latest channels.json');
+      } else if(!silent){ toast('No changes found'); }
+    }catch(err){ if(!silent) toast('Could not load channels.json'); }
+  }
+
+  function persist(){ localStorage.setItem('iptv_json', JSON.stringify(data)); }
+
+  function renderAll(){
+    el('providerName').textContent = data.provider || '—';
+    renderPackages();
+    // auto-select first package if none
+    if(!selectedPkgId && data.packages?.length){ selectedPkgId = data.packages[0].id; }
+    renderGrid();
+    el('jsonArea').value = JSON.stringify(data, null, 2);
+  }
+
+  function renderPackages(){
+    const list = el('pkgList'); list.innerHTML = '';
+    (data.packages||[]).forEach(pkg=>{
+      const div = document.createElement('div');
+      div.className = 'pkg' + (pkg.id===selectedPkgId?' active':'');
+      div.innerHTML = `
+        <img src="${pkg.logo||''}" onerror="this.style.visibility='hidden'" alt=""/>
+        <div>
+          <div class="name">${pkg.name||pkg.id}</div>
+          <div class="chip">${pkg.id}</div>
+        </div>
+        <span class="count">${pkg.channels?.length||0}</span>`;
+      div.onclick = ()=>{ selectedPkgId = pkg.id; renderPackages(); renderGrid(); };
+      list.appendChild(div);
+    });
+  }
+
+  function channelsFiltered(){
+    const pkg = data.packages.find(p=>p.id===selectedPkgId);
+    if(!pkg) return [];
+    let arr = pkg.channels || [];
+    if(searchTerm){
+      arr = arr.filter(c=> (c.name||'').toLowerCase().includes(searchTerm) || (c.id||'').toLowerCase().includes(searchTerm));
+    }
+    return arr;
+  }
+
+  function renderGrid(){
+    const grid = el('grid'); grid.innerHTML = '';
+    const pkg = data.packages.find(p=>p.id===selectedPkgId);
+    if(!pkg){ grid.innerHTML = `<div class='empty'>No package selected. Create one with <span class='kbd'>+ Add Package</span>.</div>`; return; }
+    const items = channelsFiltered();
+    if(items.length===0){ grid.innerHTML = `<div class='empty'>No channels. Click <span class='kbd'>+ Add Channel</span>.</div>`; return; }
+
+    for(const ch of items){
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <div class="top">
+          <img class="logo" src="${ch.logo||''}" alt="" onerror="this.style.visibility='hidden'" />
+          <div style="min-width:0">
+            <div class="title">${ch.name||ch.id}</div>
+            <div class="chip">${ch.id}</div>
+          </div>
+        </div>
+        <div class="tags">
+          <span class="tag">${pkg.name}</span>
+          ${ch.stream?'<span class="tag">m3u8</span>':''}
+        </div>
+        <div class="actions">
+          <button class="btn" data-act="play">▶ Play</button>
+          <button class="btn" data-act="copy">Copy URL</button>
+          <button class="btn" data-act="edit">Edit</button>
+        </div>`;
+      card.querySelector('[data-act="play"]').onclick = ()=> playChannel(ch);
+      card.querySelector('[data-act="copy"]').onclick = ()=> copyToClipboard(ch.stream||'');
+      card.querySelector('[data-act="edit"]').onclick = ()=> openModal({pkgId: pkg.id, ch});
+      grid.appendChild(card);
+    }
+  }
+
+  function toast(text){
+    console.log(text);
+  }
+
+  /*********************
+   * Playback (HLS/MSE) *
+   *********************/
+  let hls = null; const video = ()=> el('video');
+  function playChannel(ch){
+    const url = ch.stream || '';
+    if(!url){ toast('Missing stream URL'); return; }
+    const v = video();
+    el('nowTitle').textContent = ch.name || ch.id;
+    el('nowMeta').textContent = `${selectedPkgId} • ${ch.id}`;
+
+    if(Hls.isSupported()){
+      if(hls){ hls.destroy(); }
+      hls = new Hls({maxBufferLength:30});
+      hls.loadSource(url);
+      hls.attachMedia(v);
+      hls.on(Hls.Events.MANIFEST_PARSED, ()=> v.play().catch(()=>{}));
+    } else if(v.canPlayType('application/vnd.apple.mpegurl')){
+      v.src = url; v.play().catch(()=>{});
+    } else {
+      toast('HLS not supported in this browser');
+    }
+  }
+  function stopPlayback(){
+    const v = video();
+    if(hls){ hls.destroy(); hls=null; }
+    v.pause(); v.removeAttribute('src'); v.load();
+    el('nowTitle').textContent = 'Select a channel to start…';
+    el('nowMeta').textContent = '—';
+  }
+
+  /*********************
+   * JSON Editing       *
+   *********************/
+  function saveFromTextarea(){
+    try{
+      const parsed = JSON.parse(el('jsonArea').value);
+      data = parsed; persist(); renderAll(); toast('Saved');
+    }catch(err){ alert('Invalid JSON: '+err.message); }
+  }
+
+  function addPackage(){
+    const id = prompt('New package id (e.g. pkg_bein)'); if(!id) return;
+    const name = prompt('Display name');
+    data.packages.push({id, name: name||id, logo:'', channels:[]});
+    selectedPkgId = id; persist(); renderAll();
+  }
+
+  function openModal(opts){
+    const isEdit = !!opts;
+    editMode = null;
+    el('modalTitle').textContent = isEdit ? 'Edit Channel' : 'Add Channel';
+    const pkgId = isEdit? opts.pkgId : (selectedPkgId || (data.packages[0]?.id));
+    const ch = isEdit? opts.ch : { id:'', name:'', logo:'', stream:'' };
+    el('m_pkg').value = pkgId||'';
+    el('m_id').value = ch.id||'';
+    el('m_name').value = ch.name||'';
+    el('m_logo').value = ch.logo||'';
+    el('m_stream').value = ch.stream||'';
+    el('btnDelete').classList.toggle('hidden', !isEdit);
+    if(isEdit){ editMode = { pkgId, channelId: ch.id }; }
+    el('modalBackdrop').style.display = 'flex';
+  }
+  function closeModal(){ el('modalBackdrop').style.display='none'; }
+  function saveModal(){
+    const pkgId = el('m_pkg').value.trim();
+    const ch = {
+      id: el('m_id').value.trim(),
+      name: el('m_name').value.trim(),
+      logo: el('m_logo').value.trim(),
+      stream: el('m_stream').value.trim()
+    };
+    if(!pkgId || !ch.id){ alert('Package and ID are required'); return; }
+    let pkg = data.packages.find(p=>p.id===pkgId);
+    if(!pkg){
+      if(confirm('Package not found. Create it?')){ pkg = {id:pkgId, name:pkgId, logo:'', channels:[]}; data.packages.push(pkg); }
+      else return;
+    }
+    if(editMode){
+      const oldPkg = data.packages.find(p=>p.id===editMode.pkgId);
+      if(oldPkg){
+        const idx = oldPkg.channels.findIndex(x=>x.id===editMode.channelId);
+        if(idx>-1) oldPkg.channels.splice(idx, 1);
+      }
+    }
+    // push into (possibly new) package
+    const exists = pkg.channels.find(x=>x.id===ch.id);
+    if(exists){ if(!confirm('Channel with same ID exists. Overwrite?')) return; Object.assign(exists, ch); }
+    else pkg.channels.push(ch);
+    selectedPkgId = pkg.id;
+    persist(); renderAll(); closeModal();
+  }
+  function deleteChannel(){
+    if(!editMode) return;
+    const pkg = data.packages.find(p=>p.id===editMode.pkgId);
+    if(!pkg) return;
+    const idx = pkg.channels.findIndex(x=>x.id===editMode.channelId);
+    if(idx>-1){ pkg.channels.splice(idx,1); persist(); renderAll(); closeModal(); }
+  }
+
+  // Paste support: detect if user pastes a full channel object
+  ['m_id','m_name','m_logo','m_stream'].forEach(id=>{
+    el(id).addEventListener('paste', (e)=>{
+      const text = (e.clipboardData || window.clipboardData).getData('text');
+      try{ const obj = JSON.parse(text); if(obj && (obj.id||obj.name||obj.stream)){
+        e.preventDefault();
+        el('m_id').value = obj.id||''; el('m_name').value = obj.name||''; el('m_logo').value = obj.logo||''; el('m_stream').value = obj.stream||'';
+      } }catch{}
+    });
+  });
+
+  function copyToClipboard(text){
+    navigator.clipboard.writeText(text||'').then(()=> toast('Copied')).catch(()=>{});
+  }
+
+  // Kick off
+  init();
+  </script>
+</body>
+</html>
