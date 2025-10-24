@@ -70,8 +70,7 @@
         { "id": "tr_bein_max_sports_2_hd", "name": "TR: BEIN MAX SPORTS 2 HD", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-turkiye-qa-tr.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/140045.m3u8" },
         { "id": "tr_bein_iz_hd", "name": "TR: BEIN IZ HD", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-iz-qa-tr.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/140093.m3u8" }
       ]
-    }
-  ]
+    },
   {
   "id": "pkg_bein_sd",
   "name": "Bein Sports SD",
@@ -199,5 +198,5 @@
     }
   ]
 }
-
+ ]
 }
