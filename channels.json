@@ -248,13 +248,13 @@
         {
           "id": "ma_athaqafia",
           "name": "Athaqafia",
-          "logo": "http://www.snrtlive.ma/sites/all/themes/snrtlive/images/attakafiyax2.png",
+          "logo": "https://ar.wikipedia.org/wiki/%D9%82%D9%86%D8%A7%D8%A9_%D8%A7%D9%84%D8%AB%D9%82%D8%A7%D9%81%D9%8A%D8%A9_(%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8)#/media/%D9%85%D9%84%D9%81:Logo_tv_med_arrabia_nouveau.png",
           "stream": "https://cdnamd-hls-globecast.akamaized.net/live/ramdisk/arrabiaa/hls_snrt/index.m3u8"
         },
         {
           "id": "ma_chada_tv",
           "name": "Chada TV",
-          "logo": "https://chadatv.com/wp-content/themes/chadatv/images/logo.png",
+          "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Chadatv_logo.png",
           "stream": "https://edge7.vedge.infomaniak.com/livecast/chadatv/manifest.m3u8"
         },
         {
@@ -278,7 +278,7 @@
         {
           "id": "ma_tamazight",
           "name": "Tamazight",
-          "logo": "http://www.snrtlive.ma/sites/all/themes/snrtlive/images/tamazightx2.png",
+          "logo": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Tamazight-tv-chaine.png",
           "stream": "http://cdnamd-hls-globecast.akamaized.net/live/ramdisk/tamazight_tv8_snrt/hls_snrt/index.m3u8"
         },
         {
