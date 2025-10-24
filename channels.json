@@ -3,8 +3,8 @@
   "packages": [
     {
       "id": "pkg_bein",
-      "name": "Bein Sports",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Thamaniyah_logo.png",
+      "name": "Bein Sports HD",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/BeIN-Sports-Logo.svg/946px-BeIN-Sports-Logo.svg.png",
       "channels": [
         { "id": "bein_news_hd_s1", "name": "beIN News HD (S1)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-news-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67374.m3u8" },
         { "id": "bein_hd_s1", "name": "beIN HD (S1)", "logo": "https://www.lyngsat.com/logo/tv/bb/bein-sports-qa.png", "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/67373.m3u8" },
@@ -74,7 +74,7 @@
     {
       "id": "pkg_bein_sd",
       "name": "Bein Sports SD",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Thamaniyah_logo.png",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/BeIN-Sports-Logo.svg/946px-BeIN-Sports-Logo.svg.png",
       "channels": [
         {
           "id": "bein_sports_1_sd_s1",
@@ -201,7 +201,7 @@
     {
       "id": "pkg_morocco",
       "name": "Morocco",
-      "logo": "https://i.imgur.com/eE1SdyA.png",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Flag_of_Morocco.svg/1920px-Flag_of_Morocco.svg.png",
       "channels": [
         {
           "id": "ma_2m_monde",
