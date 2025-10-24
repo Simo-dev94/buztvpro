@@ -197,6 +197,96 @@
           "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/157875.m3u8"
         }
       ]
-    }
+    },
+    {
+      "id": "pkg_morocco",
+      "name": "Morocco",
+      "logo": "https://i.imgur.com/eE1SdyA.png",
+      "channels": [
+        {
+          "id": "ma_2m_monde",
+          "name": "2M Monde",
+          "logo": "https://i.imgur.com/eE1SdyA.png",
+          "stream": "http://livecdnh2.tvanywhere.ae/hls/2m_maroc/04.m3u8"
+        },
+        {
+          "id": "ma_2m_monde_alt",
+          "name": "2M Monde (Alt)",
+          "logo": "https://i.imgur.com/eE1SdyA.png",
+          "stream": "https://cdnamd-hls-globecast.akamaized.net/live/ramdisk/2m_monde/hls_video_ts/2m_monde.m3u8"
+        },
+        {
+          "id": "ma_al_aoula",
+          "name": "Al Aoula",
+          "logo": "http://www.snrtlive.ma/sites/all/themes/snrtlive/images/alaoulax2.png",
+          "stream": "https://cdnamd-hls-globecast.akamaized.net/live/ramdisk/al_aoula_inter/hls_snrt/al_aoula_inter.m3u8"
+        },
+        {
+          "id": "ma_al_aoula_laayoune",
+          "name": "Al Aoula Laayoune",
+          "logo": "http://www.snrtlive.ma/sites/all/themes/snrtlive/images/laayounex2.png",
+          "stream": "http://cdn-hls.globecast.tv/live/ramdisk/al_aoula_laayoune/hls_snrt/index.m3u8"
+        },
+        {
+          "id": "ma_al_maghribia",
+          "name": "Al Maghribia",
+          "logo": "http://www.snrtlive.ma/sites/all/themes/snrtlive/images/almaghribiax2.png",
+          "stream": "http://cdnamd-hls-globecast.akamaized.net/live/ramdisk/al_maghribia_snrt/hls_snrt/index.m3u8"
+        },
+        {
+          "id": "ma_arryadia",
+          "name": "Arryadia",
+          "logo": "http://www.snrtlive.ma/sites/all/themes/snrtlive/images/arriyadiax2.png",
+          "stream": "http://cdnamd-hls-globecast.akamaized.net/live/ramdisk/arriadia/hls_snrt/index.m3u8"
+        },
+        {
+          "id": "ma_assadissa",
+          "name": "Assadissa",
+          "logo": "http://www.snrtlive.ma/sites/all/themes/snrtlive/images/assadissax2.png",
+          "stream": "http://cdnamd-hls-globecast.akamaized.net/live/ramdisk/assadissa/hls_snrt/index.m3u8"
+        },
+        {
+          "id": "ma_athaqafia",
+          "name": "Athaqafia",
+          "logo": "http://www.snrtlive.ma/sites/all/themes/snrtlive/images/attakafiyax2.png",
+          "stream": "https://cdnamd-hls-globecast.akamaized.net/live/ramdisk/arrabiaa/hls_snrt/index.m3u8"
+        },
+        {
+          "id": "ma_chada_tv",
+          "name": "Chada TV",
+          "logo": "https://chadatv.com/wp-content/themes/chadatv/images/logo.png",
+          "stream": "https://edge7.vedge.infomaniak.com/livecast/chadatv/manifest.m3u8"
+        },
+        {
+          "id": "ma_m24_tv",
+          "name": "M24 TV",
+          "logo": "https://i.imgur.com/J7GdM3L.png",
+          "stream": "https://www.m24tv.ma/live/smil:OutStream1.smil/chunklist.m3u8"
+        },
+        {
+          "id": "ma_medi1_tv",
+          "name": "Medi 1 TV",
+          "logo": "https://www.medi1tv.ma/ar/img/footer/logo_new.png",
+          "stream": "http://streaming.medi1tv.com/live/Medi1tvmaghreb.sdp/chunklist.m3u8"
+        },
+        {
+          "id": "ma_medi1_tv_arabic",
+          "name": "Medi 1 TV Arabic",
+          "logo": "https://www.medi1tv.ma/ar/img/footer/logo_new.png",
+          "stream": "https://streaming.medi1tv.com/live/Medi1tvArabia.sdp/playlist.m3u8"
+        },
+        {
+          "id": "ma_tamazight",
+          "name": "Tamazight",
+          "logo": "http://www.snrtlive.ma/sites/all/themes/snrtlive/images/tamazightx2.png",
+          "stream": "http://cdnamd-hls-globecast.akamaized.net/live/ramdisk/tamazight_tv8_snrt/hls_snrt/index.m3u8"
+        },
+        {
+          "id": "ma_tele_maroc",
+          "name": "Télé Maroc",
+          "logo": "https://i.imgur.com/7sibv0t.png",
+          "stream": "http://api.new.livestream.com/accounts/27130247/events/8196478/live.m3u8"
+        }
+      ]
   ]
 }
