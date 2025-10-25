@@ -199,6 +199,49 @@
       ]
     },
     {
+  "id": "pkg_disney_plus",
+  "name": "DISNEY+",
+  "logo": "https://www.leparisien.fr/resizer/sMv_ej3TxQFKBgC7Ay4Nea_buaA=/932x582/cloudfront-eu-central-1.images.arcpublishing.com/lpguideshopping/QLIELEHPKBHMNHKEBCMRLJXK7I.jpg",
+  "channels": [
+    {
+      "id": "disney_fusha",
+      "name": "DISNEY+: مدبلج فصحي",
+      "logo": "https://www.leparisien.fr/resizer/sMv_ej3TxQFKBgC7Ay4Nea_buaA=/932x582/cloudfront-eu-central-1.images.arcpublishing.com/lpguideshopping/QLIELEHPKBHMNHKEBCMRLJXK7I.jpg",
+      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/154185.m3u8"
+    },
+    {
+      "id": "disney_masri_1",
+      "name": "DISNEY+:1 مدبلج مصري",
+      "logo": "https://www.leparisien.fr/resizer/sMv_ej3TxQFKBgC7Ay4Nea_buaA=/932x582/cloudfront-eu-central-1.images.arcpublishing.com/lpguideshopping/QLIELEHPKBHMNHKEBCMRLJXK7I.jpg",
+      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/154186.m3u8"
+    },
+    {
+      "id": "disney_masri_2",
+      "name": "DISNEY+:2 مدبلج مصري",
+      "logo": "https://www.leparisien.fr/resizer/sMv_ej3TxQFKBgC7Ay4Nea_buaA=/932x582/cloudfront-eu-central-1.images.arcpublishing.com/lpguideshopping/QLIELEHPKBHMNHKEBCMRLJXK7I.jpg",
+      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/154187.m3u8"
+    },
+    {
+      "id": "disney_masri_3",
+      "name": "DISNEY+:3 مدبلج مصري",
+      "logo": "https://www.leparisien.fr/resizer/sMv_ej3TxQFKBgC7Ay4Nea_buaA=/932x582/cloudfront-eu-central-1.images.arcpublishing.com/lpguideshopping/QLIELEHPKBHMNHKEBCMRLJXK7I.jpg",
+      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/154188.m3u8"
+    },
+    {
+      "id": "disney_masri_4",
+      "name": "DISNEY+:4 مدبلج مصري",
+      "logo": "https://www.leparisien.fr/resizer/sMv_ej3TxQFKBgC7Ay4Nea_buaA=/932x582/cloudfront-eu-central-1.images.arcpublishing.com/lpguideshopping/QLIELEHPKBHMNHKEBCMRLJXK7I.jpg",
+      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/154189.m3u8"
+    },
+    {
+      "id": "disney_masri_5",
+      "name": "DISNEY+:5 مدبلج مصري",
+      "logo": "https://www.leparisien.fr/resizer/sMv_ej3TxQFKBgC7Ay4Nea_buaA=/932x582/cloudfront-eu-central-1.images.arcpublishing.com/lpguideshopping/QLIELEHPKBHMNHKEBCMRLJXK7I.jpg",
+      "stream": "http://ibo.lynxiptv.com/live/185119845359/ZzN8fJj3NH/154190.m3u8"
+    }
+  ]
+},
+    {
   "id": "pkg_algeria_4k",
   "name": "Algeria 4K",
   "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Flag_of_Algeria.svg/1599px-Flag_of_Algeria.svg.png",
